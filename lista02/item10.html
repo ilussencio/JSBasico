@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function leNumero() {
+            n = prompt("Digite um numero inteiro positivo >= 2: ")
+            if (n < 2)
+                numero()
+            return n
+        }
+
+        function toBinario(number) {
+            let num = number;
+            let binary = (num % 2).toString();
+            for (; num > 1;) {
+                num = parseInt(num / 2);
+                binary = (num % 2) + (binary);
+            }
+            return binary;
+            console.log(binary);
+        }
+
+        numero = leNumero()
+
+        document.write("<table border='1'>")
+        document.write("<tr><td>Base decimal</td><td>Base binaria</td><td>Base hexadecimal</td></tr>")
+        for (i = 0; i <= numero; i++) {
+            document.write("<tr>");
+            document.write("<td>" + i + "</td>")
+            document.write("<td>" + toBinario(i) + "</td>")
+            document.write("<td>" + i.toString(16) + "</td>")
+            document.write("</tr>");
+        }
+
+        document.write("</table>")
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        texto = prompt("digite um texto: ");
+        letra = prompt("digite uma letra");
+        partes = texto.split(" ");
+
+        for(i = 0; i <= partes.length-1; i ++){
+            if( partes[i][0] == letra ){
+                document.write("<p>"+partes[i]+"</p>");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
