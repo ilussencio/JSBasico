@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        candidato = [ 
+            ["Jair Bolsonaro","PL","candidato1.png"],
+            ["Luiz Inácio Lula da Silva", "PT", "candidato2.png"],
+            ["Ciro Gomes","PDT", "candidato3.png"],
+            ["Simone Tebet","MDB","candidato4.png"]
+        ]
+      
+
+        c1 = candidato.splice(parseInt(Math.random()*candidato.length),1);
+        c2 = candidato.splice(parseInt(Math.random()*candidato.length),1);
+
+        votosC1 = Math.random()*100
+        votosC2 = 100 - votosC1;
+
+        document.write(`
+            <table>
+                <tr>
+                    <td><img src = "img/${c1[0][2]}"></td>
+                    <td>
+                        Nome: ${c1[0][0]}<br>
+                        Partido (${c1[0][1]})<br>
+                        Resultado: ${votosC1.toFixed(1)}%<br>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><img src = "img/${c2[0][2]}"></td>
+                    <td>
+                        Nome: ${c2[0][0]}<br>
+                        Partido (${c2[0][1]})<br>
+                        Resultado: ${votosC2.toFixed(1)}%<br>
+                    </td>
+                </tr>
+
+            </table>
+        
+        `)
+
+
+        if( votosC1 > votosC2){
+            document.write(`<h1>Candidato(a) vencedor(a): ${c1[0][0]} (${votosC1.toFixed(1)}%)</h1>`)
+        }else{
+            document.write(`<h1>Candidato(a) vencedor(a): ${c2[0][0]} (${votosC1.toFixed(1)}%)</h1>`)
+        }
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

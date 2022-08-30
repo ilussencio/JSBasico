@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        texto = prompt("Informe um texto qualquer: ")
+        palavra = prompt("Informe a palavra a ser encontrada: ")
+
+        frase = texto.split(' ')
+        repeticoes = []
+
+        for( i = 0; i < frase.length; i ++ ){
+            if( frase[i].toLowerCase() == palavra.toLowerCase())
+                repeticoes.push(frase[i])
+        }
+
+        document.write(`<p> <b>Palavras encontradas:</b> ${repeticoes}</p>`);
+        document.write(`<p> <b>Numero de ocorrencias:</b> ${repeticoes.length}</p> `)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

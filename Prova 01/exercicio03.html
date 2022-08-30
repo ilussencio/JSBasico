@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        texto = prompt("Informe um texto qualquer: ")
+        config = parseInt(prompt("Que configuração você quer aplicar (1) itálico, (2) negrito ou (3) sublinhado: "))
+
+        switch(config){
+            case 1:
+                texto = `<i>${texto}</i>`
+                break
+            case 2:
+                texto = `<b>${texto}</b>`
+                break
+            case 3: 
+                texto = `<u>${texto}</u>`
+        }
+
+        document.write(texto)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

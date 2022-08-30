@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        v1 = parseFloat(prompt("Primeiro valor:"))
+        v2 = parseFloat(prompt("Segundo valor:"))
+        operador = prompt("Operador + ou - ou * ou /: ")
+        resultado = 0
+
+        switch(operador) {
+            case '+':
+                resultado = v1 + v2;
+                break;
+            case '-':
+                resultado = v1 - v2;
+                break;
+            case '*':
+                resultado = v1 * v2;
+                break;
+            case '/':
+                resultado = v1 / v2;
+                break;
+        }
+        
+        document.write(`<p> Primeiro valor: ${v1}</p>`)
+        document.write(`<p> Seguno valor: ${v2}</p>`)
+        document.write(`<p> Operador: ${operador}</p>`)
+        document.write(`<p> Resultado: ${resultado} </p>`)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
