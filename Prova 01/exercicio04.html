@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        candidato = [ 
+        candidato = [
             ["Jair Bolsonaro","PL","candidato1.png"],
             ["Luiz Inácio Lula da Silva", "PT", "candidato2.png"],
             ["Ciro Gomes","PDT", "candidato3.png"],
@@ -46,9 +46,9 @@
 
 
         if( votosC1 > votosC2){
-            document.write(`<h1>Candidato(a) vencedor(a): ${c1[0][0]} (${votosC1.toFixed(1)}%)</h1>`)
+            document.write(`<h1>Candidato(a) vencedor(a): ${c1[0][0].toUpperCase()} (${votosC1.toFixed(1)}%)</h1>`)
         }else{
-            document.write(`<h1>Candidato(a) vencedor(a): ${c2[0][0]} (${votosC1.toFixed(1)}%)</h1>`)
+            document.write(`<h1>Candidato(a) vencedor(a): ${c2[0][0].toUpperCase()} (${votosC1.toFixed(1)}%)</h1>`)
         }
 
         
