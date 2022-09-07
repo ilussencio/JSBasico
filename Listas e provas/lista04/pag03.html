@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function resultado(){
+            primeiro = parseFloat(document.getElementById("primeiro").value)
+            segundo = parseFloat(document.getElementById("segundo").value)
+
+            if(primeiro > 50 || primeiro < 0 ){
+                alert("Primeiro nota invalida! entrar com a nota de 0 a 50")
+                document.getElementById("primeiro").focus()
+                return
+            }else if(segundo > 50 || segundo < 0){
+                alert("Segunda nota invalida! entrar com a nota de 0 a 50")
+                document.getElementById("segundo").focus()
+                return
+            }
+            
+            res = primeiro + segundo
+
+            if(res >= 60){
+                alert("APROVADO! nota: "+res);
+            }else{
+                alert(`REPROVADO! \nnota: ${res}\nFalta ${60-res} ponto para ser aprovado`)
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="primeiro">Nome (1 Bimestre):</label>
+        <input type="text" id="primeiro"><br>
+
+        <label for="segundo">Nome (2 Bimestre):</label>
+        <input type="text" id="segundo"><br>
+
+        <input type="button" onclick="resultado()" value="Resultado">
+    </form>
+</body>
+</html>

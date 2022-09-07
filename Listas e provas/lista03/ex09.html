@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        n = prompt("entre com o numero de pessoas: ")
+        pessoas = []
+        for(i = 0; i <= n-1; i ++)
+            pessoas.push(prompt("Pessoa Numero "+(i+1)))
+
+        for(let i = pessoas.length -1; i > 0; i --){
+            const j = Math.floor(Math.random() * (i + 1));
+            [pessoas[i], pessoas[j]] = [pessoas[j], pessoas[i]];
+        }
+        document.write("<h1>Ordem de apresentação dos grupos</h1>")
+        document.write("<ul>")
+        for(i = 0; i <= pessoas.length-1; i++){
+            document.write(`<li>${i+1}° - ${pessoas[i]}</li>`)
+        }
+        document.write("</ul>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

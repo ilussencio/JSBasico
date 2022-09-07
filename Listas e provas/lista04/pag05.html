@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="scripts/script.js"></script>
+    <link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+    <p class="titulo">Acesso ao Sistema</p>
+    <form>
+        <table>
+            <tr>
+                <td>Login: </td>
+                <td>
+                    <input type="text" id="login">
+                </td>
+            </tr>
+            <tr>
+                <td>Senha: </td>
+                <td>
+                    <input type="password" id="senha">
+                    <label class="obs">(max. 8 caracteres)</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Confirmar Senha: </td>
+                <td>
+                    <input type="password" id="confSenha">
+                    <label class="obs">(max. 8 caracteres)</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td >
+                    <input type="reset" value="Limpar">
+                </td>
+                <td>
+                    
+                    <input type="button" onclick="entrar()" value="Entrar">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

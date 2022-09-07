@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validar(){
+            senha = document.getElementById("txtSenha")
+            confSenha = document.getElementById("txtConfSenha")
+
+            if(senha.value == ""){
+                alert("Senha esta em branco, Favor Informa-la!")
+                senha.focus()
+            }
+            else if(confSenha.value == ""){
+                alert("Confirmar senha esta em branco, Favor Informa-la!")
+                confSenha.focus()
+            }else if(senha.value != confSenha.value){
+                alert("As senha não conferem!")
+                senha.focus
+            }else{
+                alert("Logado senha iguais") 
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label>Senha: </label><br>
+        <input type="password" id="txtSenha">
+        <br><br>
+        <label>Confirmar senha: </label><br>
+        <input type="password" id="txtConfSenha">
+        <br><br>
+        <input type="reset" value="Limpar">
+        <input type="button" value="Acessar" onclick="validar()">
+        
+    </form>
+</body>
+</html>

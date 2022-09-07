@@ -13,23 +13,23 @@
 
         switch(operador) {
             case '+':
-                resultado = v1 + v2;
+                document.write(`Resultado = ${(v1 + v2).toFixed(2)}`)
                 break;
             case '-':
-                resultado = v1 - v2;
+                document.write(`Resultado = ${(v1 - v2).toFixed(2)}`)
                 break;
             case '*':
-                resultado = v1 * v2;
+                document.write(`Resultado = ${(v1 + v2).toFixed(2)}`)
                 break;
             case '/':
-                resultado = v1 / v2;
+                if(v2 != 0)
+                    document.write(`Resultado = ${(v1 + v2).toFixed(2)}`)
+                else
+                    document.write(`Nao e permitido divisao por zero!`)
                 break;
+            default:
+                document.write(`Operador invalido!`)
         }
-        
-        document.write(`<p> Primeiro valor: ${v1}</p>`)
-        document.write(`<p> Seguno valor: ${v2}</p>`)
-        document.write(`<p> Operador: ${operador}</p>`)
-        document.write(`<p> Resultado: ${resultado} </p>`)
 
     </script>
 </head>

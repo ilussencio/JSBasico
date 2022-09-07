@@ -14,8 +14,8 @@
         ]
       
 
-        c1 = candidato.splice(parseInt(Math.random()*candidato.length),1);
-        c2 = candidato.splice(parseInt(Math.random()*candidato.length),1);
+        c1 = candidato.splice(parseInt(Math.random()*candidato.length),1)[0];
+        c2 = candidato.splice(parseInt(Math.random()*candidato.length),1)[0];
 
         votosC1 = Math.random()*100
         votosC2 = 100 - votosC1;
@@ -23,19 +23,19 @@
         document.write(`
             <table>
                 <tr>
-                    <td><img src = "img/${c1[0][2]}"></td>
+                    <td><img src="img/${c1[2]}"></td>
                     <td>
-                        Nome: ${c1[0][0]}<br>
-                        Partido (${c1[0][1]})<br>
+                        Nome: ${c1[0]}<br>
+                        Partido (${c1[1]})<br>
                         Resultado: ${votosC1.toFixed(1)}%<br>
                     </td>
                 </tr>
 
                 <tr>
-                    <td><img src = "img/${c2[0][2]}"></td>
+                    <td><img src="img/${c2[2]}"></td>
                     <td>
-                        Nome: ${c2[0][0]}<br>
-                        Partido (${c2[0][1]})<br>
+                        Nome: ${c2[0]}<br>
+                        Partido (${c2[1]})<br>
                         Resultado: ${votosC2.toFixed(1)}%<br>
                     </td>
                 </tr>
@@ -43,12 +43,10 @@
             </table>
         
         `)
-
-
         if( votosC1 > votosC2){
-            document.write(`<h1>Candidato(a) vencedor(a): ${c1[0][0].toUpperCase()} (${votosC1.toFixed(1)}%)</h1>`)
+            document.write(`<h1>Candidato(a) vencedor(a): ${c1[0].toUpperCase()} (${votosC1.toFixed(1)}%)</h1>`)
         }else{
-            document.write(`<h1>Candidato(a) vencedor(a): ${c2[0][0].toUpperCase()} (${votosC1.toFixed(1)}%)</h1>`)
+            document.write(`<h1>Candidato(a) vencedor(a): ${c2[0].toUpperCase()} (${votosC1.toFixed(1)}%)</h1>`)
         }
 
         

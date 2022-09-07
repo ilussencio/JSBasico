@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getRandom(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        function icon(n){
+            if(n == 1)
+                return "💎 (pedra)"
+            else if(n == 2)
+                return "🧻 (papel)" 
+            else
+                return "✂ (tesoura)"
+        }
+
+        jogador1 = getRandom(1,3)
+        jogador2 = getRandom(1,3)
+        
+        
+
+        document.write("<table border='1'>")
+        document.write("<tr><td>JOGADOR 01</td> <td>JOGADOR 02</td></tr>")
+        document.write("<tr><td>"+icon(jogador1)+"</td> <td>"+icon(jogador2)+"</td></tr>")
+        vencedor = 0
+        if( jogador1 == 1 && jogador2 == 2)
+            vencedor = 2
+        else if( jogador1 == 1 && jogador2 == 3)
+            vencedor = 1
+
+        else if( jogador1 == 2 && jogador2 == 1)
+            vencedor = 1
+        else if( jogador1 == 2 && jogador2 == 3)
+            vencedor = 2
+
+        else if( jogador1 == 3 && jogador2 == 1)
+            vencedor = 2
+        else if( jogador1 == 3 && jogador2 == 2)
+            vencedor = 1
+        
+        if(vencedor == 1)
+            document.write("<tr><td colspan='2'> 🏅 VITORIA DO JOGADOR 1 🏅 </td></tr>")
+        else if( vencedor == 2)
+            document.write("<tr><td colspan='2'> 🏅 VITORIA DO JOGADOR 2 🏅 </td></tr>")
+        else
+            document.write("<tr><td colspan='2'>EMPATE</td></tr>")
+        
+
+        document.write("</table>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
