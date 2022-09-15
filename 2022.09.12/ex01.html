@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+            display:block;
+            margin-top:10px;
+        }
+        form {
+            border:1px solid black;
+            width:250px;
+            margin:auto;
+            padding:10px;
+        }
+        input[type="button"] {
+            display:block;
+            width:100px;
+            margin:auto;
+            margin-top:10px;
+        }
+        input[type="text"] {
+            width:90%;
+        }
+        .errorMsg{
+            color: red;
+            font-size: 10px;
+        }
+    </style>
+    <script>
+        // function validacao(){
+        //     cxNome = document.getElementById("cxNome")
+        //     if(cxNome.value == ""){
+        //         alert("Caixa do nome vazia!")
+        //     }
+        //     else{
+        //         alert("Sucesso")
+        //     }
+        // }
+
+        // function validacao(){
+        //     cxNome = document.getElementById("cxNome")
+        //     errorNome = document.getElementById("errorNome")
+        //     cxEndereco = document.getElementById("cxEndereco")
+        //     erroEndereco = document.getElementById("errorMsg")
+
+        //     if(!cxNome.value){
+        //         errorNome.innerHTML = "Nome invalido! Tente Novamente!";
+        //         cxNome.focus()
+        //     }else if(!cxEndereco.value){
+        //         errorEndereco.innerHTML = "Endereco invalido! Tente Novamente!"
+        //         cxEndereco.focus()
+        //     }
+        // }
+        // function limparErrorMsg(){
+        //     document.getElementById("errorNome").innerHTML = ""
+        // }
+
+        // function limparErrorMsgEndereco(){
+        //     document.getElementById("errorEndereco").innerHTML = ""
+        // }
+
+        function validacao(){
+            inputs = document.querySelectorAll(".required");
+            tipos = ["TEXT","NUMBER","TEL"];
+            for( i = 0; i < inputs.length; i++ ){
+                if ( (tipos.includes(inputs[i].type.toUpperCase()) ) && inputs[i].value == ""){
+                    document.getElementById(`${inputs[i].name}ERROR`).innerHTML = `${inputs[i].name} invalido! Tente Novamente!`
+                }
+            }
+        }
+
+        function validaError (name){
+            element = document.getElementById(`${name}ERROR`)
+            if(element.innerHTML != ""){
+                element.innerHTML = ""
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="cxTexto">Nome: </label>
+        <input type="text" id="cxNome" class="required" onkeypress="validaError(this.name)" name="NOME">
+        <span id="NOMEERROR" class="errorMsg"></span>
+        
+        <label for="cxEndereco">Endereco: </label>
+        <input type="text" id="cxEndereco" class="required" onkeypress="validaError(this.name)" name="ENDERECO">
+        <span id="ENDERECOERROR" class="errorMsg"></span>
+
+        <label for="cxTelefone">Telefone: </label>
+        <input type="tel" id="cxTelefone" class="required" onkeypress="validaError(this.name)" name="TELEFONE">
+        <span id="TELEFONEERROR" class="errorMsg"></span>
+
+        <label for="cxIdade">IDADE: </label>
+        <input type="number" id="cxIdade" class="required" onkeypress="validaError(this.name)" onchange="validaError(this.name)" name="IDADE">
+        <span id="IDADEERROR" class="errorMsg"></span>
+
+
+
+        <input type="button" onclick="validacao()" value="Enviar">
+    </form>
+</body>
+</html>

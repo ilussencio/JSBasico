@@ -20,5 +20,4 @@ function entrar(){
     }else{
         alert("Todos os campos foram digitador corretamente!")
     }
-
-}
+} 
