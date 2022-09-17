@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            display: block;
+            margin-top: 20px;
+        }
+        form {
+            border:2px solid gray;
+            width:400px;
+            margin:auto;
+            padding:20px;
+            border-radius: 10px;
+        }
+
+        input[type="button"],[type="reset"] {
+            display:block;
+            width:300px;
+            margin:auto;
+            margin-top:10px;
+            background-color: rgb(0, 155, 244);
+            color: white;
+            font-weight: bold;
+            padding: 15px;
+            
+        }
+        input[type="reset"]{
+            background-color: grey;
+            padding: 5px;
+        }
+        input[type="text"],[type="tel"],[type="email"] {
+            width:100%;
+        }
+        textarea{
+            width: 100%;
+            height: 100px;
+        }
+        .sex{
+            display: flex;
+        }
+        .sex > div {
+            padding-right: 50px;
+        }
+        select{
+            width: 100%;
+        }
+
+        .errorMsg{
+            color: red;
+            font-size: 10px;
+        }
+
+    </style>
+    <script>
+        function validate(){
+            inputs = document.querySelectorAll(".required");
+            tipos = ["TEXT","NUMBER","TEL","EMAIL"];
+            for( i = 0; i < inputs.length; i++ ){
+                if ( (tipos.includes(inputs[i].type.toUpperCase()) ) && inputs[i].value == ""){
+                    document.getElementById(`${inputs[i].name}ERROR`).innerHTML = `${inputs[i].name} invalido! Tente Novamente!`
+                }
+            }
+
+            sex = document.getElementsByName("SEXO")
+            if(sex[0].checked == false && sex[1].checked == false){
+                document.getElementById(`SEXOERROR`).innerHTML = `SEXO invalido! Tente Novamente!`   
+            }
+
+            getStatus = document.getElementById("status")
+            if(getStatus.value == ""){
+                document.getElementById(`STATUSERROR`).innerHTML = `ESTADO CIVIL invalido! Tente Novamente!`
+            }
+
+            suggestions = document.getElementById("suggestions")
+            if(suggestions.value == ""){
+                document.getElementById(`SUGGESTIONSERROR`).innerHTML = `Por favor registre uma sugestão, elogio ou comentários`
+            }
+        }
+
+        function validaError (name){
+            if(name == "STATUS"){
+                element = document.getElementsByName(`${name}`)
+                if(element.value != ""){
+                    document.getElementById(`STATUSERROR`).innerHTML = ""
+                }
+            } else {
+                element = document.getElementById(`${name}ERROR`)
+                if(element.innerHTML != ""){
+                    element.innerHTML = ""
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        <label for="firstName">Primeiro Nome:</label>
+        <input type="text" class="required" onkeypress="validaError(this.name)" id="firstName" name="NOME">
+        <label class="errorMsg" id="NOMEERROR"></label>
+
+        <label for="lastName">Sobrenome:</label>
+        <input type="text" class="required" onkeypress="validaError(this.name)"  id="lastName" name="SOBRENOME">
+        <label class="errorMsg" id="SOBRENOMEERROR"></label>
+
+        <label for="address">Endereco:</label>
+        <input type="text" class="required" onkeypress="validaError(this.name)"  id="address" name="ENDERECO">
+        <label class="errorMsg" id="ENDERECOERROR"></label>
+
+        <label for="fone">Telefone:</label>
+        <input type="tel" class="required" onkeypress="validaError(this.name)" id="fone" name="TELEFONE">
+        <label class="errorMsg" id="TELEFONEERROR"></label>
+
+        <label for="mail">E-Mail:</label>
+        <input type="email" class="required" onkeypress="validaError(this.name)"  id="mail" name="EMAIL">
+        <label class="errorMsg" id="EMAILERROR"></label>
+
+        <div class="sex">
+            <div>
+                <label for="sexHe">Masculino</label>
+                <input type="radio" onclick="validaError(this.name)" name="SEXO" id="sexMen" value="Masculino">
+            </div>
+            <div>
+                <label for="sexShe">Feminino</label>
+                <input type="radio" onclick="validaError(this.name)" name="SEXO" id="sexShe" value="Feminino">
+            </div>
+        </div>
+        <label class="errorMsg" id="SEXOERROR"></label>
+
+        <label for="status">Estado Civil:</label>
+        <select id="status" onchange="validaError(this.name)" name="STATUS">
+            <option value="">Selecione</option>
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Divorciado</option>
+        </select>
+        <label class="errorMsg" id="STATUSERROR"></label>
+        
+        <label for="suggestions">Sugestões / Elogios / Comentários</label>
+        <textarea id="suggestions" onkeypress="validaError(this.name)" name="SUGGESTIONS"></textarea>
+        <label class="errorMsg" id="SUGGESTIONSERROR"></label>
+
+        <input type="button" onclick="validate()"  value="CADASTRAR">
+        <input type="reset" value="LIMPAR">
+    </form>
+</body>
+</html>
