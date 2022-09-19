@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+        }
+        .container div p{
+            text-align: center;
+            font-weight: bold;
+            color: red;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .container > div > div {
+            text-align: center;
+            border: 2px solid black;
+            background-color: lightgreen;
+            width: 250px;
+            margin: 10px;
+        }
+        .container div img{
+            width: 200px;
+            margin:10px;
+        }
+        label{
+            display: block;
+        }
+    </style>
+    <script>
+        votos = [0,0,0,0]
+        function voto(candidato){
+            votos[candidato] += 1;
+            console.log(votos);
+
+            for(i = 0; i <= 3; i ++){
+                document.getElementById(`votosC${candidato}`).innerHTML = `Numero de votos: ${votos[candidato]}`
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>CANDIDATO 1</p>
+            <div onclick="voto(0)">
+                <label>Mikey</label>
+                <img src="Imagens/exercício 02/candidato1.jpg" alt="">
+                <label id="votosC0">Numero de votos: </label>
+            </div>
+        </div>
+        
+
+        <div>
+            <p>CANDIDATO 2</p>
+            <div onclick="voto(1)">
+                <label>Minie</label>
+                <img src="Imagens/exercício 02/candidato2.jpg" alt="">
+                <label id="votosC1">Numero de votos: </label>
+            </div>
+        </div>
+
+        <div>
+            <p>CANDIDATO 3</p>
+            <div onclick="voto(2)">
+                <label>Pateta</label>
+                <img src="Imagens/exercício 02/candidato3.jpg" alt="">
+                <label id="votosC2">Numero de votos: </label>
+            </div>
+        </div>
+
+        <div>
+            <p>CANDIDATO 4</p>
+            <div onclick="voto(3)">
+                <label>Pluto</label>
+                <img src="Imagens/exercício 02/candidato4.jpg" alt="">
+                <label id="votosC3">Numero de votos: </label>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

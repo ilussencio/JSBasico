@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        .box{
+            width: 300px;
+            height: 300px;
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        function trocarImg(idPersonagem){
+            nome = ""
+            if(idPersonagem == 0) {
+               nome = prompt("Qual e o seu nome?");
+            }
+            imagens = ["alegre","Assustado","Nervoso","Pensativo"]
+            msg = [`${nome}, vamos brincar?`,"O que voc quer?","Não me aperte!!", "ZzZzZzZz!"]
+            document.getElementById("imgPersonagem").src = "Imagens/exercício 01/"+imagens[idPersonagem]+".png"
+            document.getElementById("msgPersonagem").innerHTML = msg[idPersonagem]
+        }
+        function trocarImg1(){
+            document.getElementById("imgPersonagem").src = "Imagens/exercício 01/Assustado.png"
+        }
+        function trocarImg2(){
+            document.getElementById("imgPersonagem").src = "Imagens/exercício 01/Pensativo.png"
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img id="imgPersonagem" src="Imagens/exercício 01/Pensativo.png" alt="" 
+            onmouseover="trocarImg(1)"
+            onmouseout="trocarImg(3)"
+            onmousedown="trocarImg(2)"
+            onmouseup="trocarImg(0)"
+            >
+            <p id="msgPersonagem">ZzZzZzZz!</p>
+        </div>
+    </div>
+    
+    
+
+    
+</body>
+</html>
