@@ -27,7 +27,7 @@
             }
             imagens = ["alegre","Assustado","Nervoso","Pensativo"]
             msg = [`${nome}, vamos brincar?`,"O que voc quer?","Não me aperte!!", "ZzZzZzZz!"]
-            document.getElementById("imgPersonagem").src = "./Imagens/exercício 01/"+imagens[idPersonagem]+".png"
+            document.getElementById("imgPersonagem").src = "./Imagens/exercicio01/"+imagens[idPersonagem]+".png"
             document.getElementById("msgPersonagem").innerHTML = msg[idPersonagem]
         }
     </script>
@@ -35,7 +35,7 @@
 <body>
     <div class="container">
         <div class="box">
-            <img id="imgPersonagem" src="./Imagens/exercício 01/Pensativo.png" alt="" 
+            <img id="imgPersonagem" src="./Imagens/exercicio01/Pensativo.png" alt="" 
             onmouseover="trocarImg(1)"
             onmouseout="trocarImg(3)"
             onmousedown="trocarImg(2)"
