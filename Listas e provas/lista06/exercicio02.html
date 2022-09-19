@@ -30,6 +30,12 @@
         label{
             display: block;
         }
+        .verde {
+            background-color: lightgreen !important;
+        }
+        .amarelo{
+            background-color: yellow !important;
+        }
     </style>
     <script>
         votos = [0,0,0,0]
@@ -41,15 +47,19 @@
                 document.getElementById(`votosC${candidato}`).innerHTML = `Numero de votos: ${votos[candidato]}`
             }
         }
+
+        function mudarCor(element,cor){
+            element.className = cor
+        }
     </script>
 </head>
 <body>
     <div class="container">
         <div>
             <p>CANDIDATO 1</p>
-            <div onclick="voto(0)">
+            <div onclick="voto(0)" onmouseover="mudarCor(this, `amarelo`)" onmouseout="mudarCor(this, `verde`)">
                 <label>Mikey</label>
-                <img src="Imagens/exercício 02/candidato1.jpg" alt="">
+                <img src="./Imagens/exercício 02/candidato1.jpg" alt="">
                 <label id="votosC0">Numero de votos: </label>
             </div>
         </div>
@@ -57,27 +67,27 @@
 
         <div>
             <p>CANDIDATO 2</p>
-            <div onclick="voto(1)">
+            <div onclick="voto(1)" onmouseover="mudarCor(this, `amarelo`)" onmouseout="mudarCor(this, `verde`)">
                 <label>Minie</label>
-                <img src="Imagens/exercício 02/candidato2.jpg" alt="">
+                <img src="./Imagens/exercício 02/candidato2.jpg" alt="">
                 <label id="votosC1">Numero de votos: </label>
             </div>
         </div>
 
         <div>
             <p>CANDIDATO 3</p>
-            <div onclick="voto(2)">
+            <div onclick="voto(2)" onmouseover="mudarCor(this, `amarelo`)" onmouseout="mudarCor(this, `verde`)">
                 <label>Pateta</label>
-                <img src="Imagens/exercício 02/candidato3.jpg" alt="">
+                <img src="./Imagens/exercício 02/candidato3.jpg" alt="">
                 <label id="votosC2">Numero de votos: </label>
             </div>
         </div>
 
         <div>
             <p>CANDIDATO 4</p>
-            <div onclick="voto(3)">
+            <div onclick="voto(3)" onmouseover="mudarCor(this, `amarelo`)" onmouseout="mudarCor(this, `verde`)">
                 <label>Pluto</label>
-                <img src="Imagens/exercício 02/candidato4.jpg" alt="">
+                <img src="./Imagens/exercício 02/candidato4.jpg" alt="">
                 <label id="votosC3">Numero de votos: </label>
             </div>
         </div>
