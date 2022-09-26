@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./scripts/script.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container gatos">
+        <div>
+            <img src="./Imagens/gato01.gif" onclick="gato01()" alt="">
+            <p>Clique em mim!</p>
+        </div>
+
+        <div>
+            <img src="./Imagens/gato02.gif" onclick="gato02()" alt="">
+            <p>Clique sobre mim varias vezes!</p>
+            <p>Carinhos: <label id="contGato">0</label></p>
+        </div>
+
+        <div>
+            <img src="./Imagens/gato03.gif" onmouseenter="gato03(6)" onmouseleave="gato03(3)" id="gato" alt="">
+            <p>Passe o cursor sobre mim</p>
+        </div>
+
+        <div>
+            <img src="./Imagens/gato04.gif" onmousemove="gato04(1)" onmouseleave="gato04(2)" alt="">
+            <p id="msgGato04">lá lá lá lá lá lá</p>
+        </div>
+
+        <div>
+            <img src="./Imagens/gato05.gif" alt="">
+            <input type="button" value="Gerar número de sorte" onclick="gato05()">
+            <input type="text" id="cxNumero" disabled>
+        </div>
+
+    </div>
+</body>
+</html>

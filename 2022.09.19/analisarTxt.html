@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisar texto</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script.js"></script>
+</head>
+<body onload="getTextHome()">
+    <p class="destaque">1) Texto informado pelo usuario na pagina exterior: </p>
+    <p id="txtHome"></p>
+
+    <p class="destaque">2) Voce gostaria de analisar a informacao disponibilizada pelo usuario na pagina anterior</p>
+    <select id="select">
+        <option value="sim" >Sim</option>
+        <option value="nao" >Não</option>
+    </select>
+
+    <p>OBS.: Se voce responder "não" na pergunta anterior (2), por favor informe um novo texto na caixa abaixo: </p>
+    
+    <form>
+        <input type="text" class="txtBox" id="txtInfo">
+        <br>
+        <input type="button" class="button" onclick="analisarTxt()" value="ANALISAR TEXTO">
+    </form>
+
+    <hr>
+    <form>
+        <label class="destaque">3) Quantidade de palavras contidas no texto:</label> <span id="txtTotalPal"></span>
+        <br><br>
+
+        <label class="destaque">4) Palavras iniciadas com a letra M: </label>
+        <input type="text" id="initM" disabled>
+        <br><br>
+
+        <label class="destaque">5) Primeiras palavra do texto: </label>
+        <input type="text" id="first" disabled>
+        <br><br>
+
+        <label class="destaque">6) Segunda palavra do texto:</label>
+        <input type="text" id="second" disabled>
+        <br><br>
+
+        <label class="destaque">7) Ultima palavra do texto:</label>
+        <input type="text" id="lasted" disabled>
+        <br><br>
+
+        <input type="button" class="button" value="ABRIR PAGINA DO PAPAI NOEL" onclick="window.open('felizNatal.html','_self')">
+    </form>
+    
+</body>
+</html>
