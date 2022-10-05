@@ -1,0 +1,44 @@
+function usuario(){
+    nome = prompt("Qual é o seu nome?");
+    if(nome == "" || nome == null)
+        nome = "Visitante";
+    alert(`${nome}, Seja Bem-vindo!`);
+    document.getElementById("usuario").value = nome;
+}
+
+function validacao(){
+    pass = document.getElementById("senha");
+    user = document.getElementById("usuario");
+    
+    window.localStorage.setItem("usuario",user.value);
+    window.localStorage.setItem("senha",senha.value);
+
+    if(user.value == ""){
+        alert("Usuario em branco, informe um usuario!");
+        user.focus();
+    }else if(pass.value == ""){
+        alert("Senha em branco, informe uma senha!");
+        pass.focus();
+    }else if(user.value.toUpperCase() == "WILTON"){
+        window.open("./areaUser.html","_self");
+    }else{
+        window.open("./areaRestrita.html","_self");
+    }
+        
+}
+
+function areaRestrita(){
+    document.getElementById("nomeAreaRestrita").innerHTML = window.localStorage.getItem("usuario").toUpperCase();
+}
+
+function figura(nome){
+    document.getElementById("imagem").src = `./img/${nome}.jpg`;
+}
+
+function soma(){
+    result = document.getElementById("resultado")
+    if(result.value == "")
+        result.value = 0
+
+    result.value = 1 + parseInt(result.value)
+}
