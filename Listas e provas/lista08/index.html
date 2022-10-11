@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        label,
+        input[type="text"],
+        a {
+            display: block;
+        }
+
+        a {
+            cursor: pointer;
+        }
+
+        a,
+        label,
+        input[type="button"] {
+            margin-top: 16px;
+        }
+    </style>
+    <script>
+        function paginaUsuario() {
+            window.location.href = "listar.html"
+        }
+
+        function criarUsuario() {
+            user = document.getElementById("userInput").value
+            pass = document.getElementById("passwordInput").value
+            if (!user) {
+                alert("Digite um usuário")
+                document.getElementById("userInput").focus()
+                return;
+            }
+            if (!pass) {
+                alert("Digite uma senha")
+                document.getElementById("passwordInput").focus()
+                return;
+            }
+            window.localStorage.setItem("user", JSON.stringify({ user, pass }))
+            alert("Usuario criado com sucesso!")
+        }
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <label for="userInput">Usuario</label>
+        <input type="text" name="userInput" id="userInput">
+
+        <label for="passwordInput">Senha</label>
+        <input type="text" name="passwordInput" id="passwordInput">
+
+        <input type="button" value="Cadastrar" onclick="criarUsuario()">
+        <input type="reset" value="Limpar">
+
+    </form>
+    <a onclick="paginaUsuario()">Mostrar usuário cadastrado</a>
+</body>
+
+</html>
