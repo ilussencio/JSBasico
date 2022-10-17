@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function start(){
+            txtNome = document.getElementById('txtNome').value
+           
+            nome = document.getElementById('nome')
+            nome.innerHTML = txtNome
+            count = 14
+            nome.style.fontSize = `${count}px`;
+
+            loop = setInterval(
+                () => {
+                    count += 2
+                    nome.style.fontSize = `${count}px`;
+                    if(count == 40){
+                        clearInterval(loop)
+                    }
+                },
+                500
+            );
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Insira o nome completo: <input type="text" id="txtNome">
+        <input type="button" value="Iniciar" onclick="start()">
+    </form>
+    <p>
+        Nome: <label id="nome"></label>
+    </p>
+</body>
+</html>

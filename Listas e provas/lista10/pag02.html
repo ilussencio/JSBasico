@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function trocar(){
+            cx01 = document.getElementById('cx01')
+            cx02 = document.getElementById('cx02')
+            cxSelect = document.getElementById('cxSelect').value * 1000;
+            setTimeout(
+                ()=>{
+                    cx02.value = cx01.value;
+                    cx01.value = ""
+                },
+                cxSelect
+            );
+        }
+        
+    </script>
+</head>
+<body>
+    <form>
+        Caixa 01: <input type="text" id="cx01"><br>
+        Caixa 02:<input type="text" id="cx02"><br>
+        Caixa Select:
+            <select id="cxSelect">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select>
+        <input type="button" value="Trocar" onclick="trocar()">
+    </form>
+</body>
+</html>
