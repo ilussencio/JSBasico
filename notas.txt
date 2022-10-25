@@ -1,0 +1,19 @@
+placar = {
+    tempo:"7:14",
+    pontuacao:87
+}
+
+veiculo = {
+    potencia:300,
+    marca:"volkswagen",
+    cor:"prata"
+}
+
+Wilton
+false
+
+user = {nome:"Lucas",senha:"password"}
+
+user = {nome:"wilton",senha:"1234"}
+jsonUser = JSON.stringify(user) //trasforma em string
+user2 = JSON.parse(jsonUser) //transforma em objeto novamente
